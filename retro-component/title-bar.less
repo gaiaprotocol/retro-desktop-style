@@ -1,0 +1,45 @@
+.title-bar.retro-component {
+    display    : flex;
+    padding    : 3px 2px 3px 3px;
+    background : linear-gradient(90deg, navy, #1084d0);
+    align-items: center;
+
+    >h1 {
+        flex-grow  : 1;
+        color      : #fff;
+        font-weight: bold;
+    }
+
+    >.controls {
+        display: flex;
+
+        >button {
+            box-sizing : border-box;
+            border     : none;
+            color      : transparent;
+            text-shadow: 0 0 var(--text-color);
+            background : var(--surface);
+            box-shadow : var(--border-raised-outer), var(--border-raised-inner);
+            min-width  : 16px;
+            min-height : 14px;
+
+            &:active {
+                box-shadow : var(--border-sunken-outer), var(--border-sunken-inner);
+                text-shadow: 1px 1px var(--text-color);
+            }
+
+            &.close {
+                margin-left        : 2px;
+                background-image   : url("/icon/close.svg");
+                background-repeat  : no-repeat;
+                background-position: top 3px left 4px;
+            }
+
+            &.help {
+                background-image   : url("/icon/help.svg");
+                background-repeat  : no-repeat;
+                background-position: top 2px left 5px;
+            }
+        }
+    }
+}
