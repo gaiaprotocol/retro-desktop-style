@@ -1,0 +1,41 @@
+.checkbox.retro-component {
+    >input[type="checkbox"]:focus+label {
+        outline: 1px dotted #000000;
+    }
+
+    >input[type="checkbox"]+label {
+        position   : relative;
+        margin-left: var(--checkbox-total-width);
+        line-height: 13px;
+        display    : inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+
+    >input[type="checkbox"]+label::before {
+        content     : "";
+        position    : absolute;
+        left        : calc(-1 * (var(--checkbox-total-width-precalc)));
+        display     : inline-block;
+        width       : var(--checkbox-width);
+        height      : var(--checkbox-width);
+        background  : var(--button-highlight);
+        box-shadow  : var(--border-field);
+        margin-right: var(--radio-label-spacing);
+    }
+
+    >input[type="checkbox"]:active+label::before {
+        background: var(--surface);
+    }
+
+    >input[type="checkbox"]:checked+label::after {
+        content   : "";
+        display   : block;
+        width     : var(--checkmark-width);
+        height    : var(--checkmark-width);
+        position  : absolute;
+        top       : var(--checkmark-top);
+        left      : calc(-1 * (var(--checkbox-total-width-precalc)) + var(--checkmark-left));
+        background: url("/icon/checkmark.svg");
+    }
+}
